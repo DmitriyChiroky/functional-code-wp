@@ -1,0 +1,112 @@
+
+
+.wcl-b2-img-loader {
+    width: 167px;
+    height: 167px;
+    position: relative;
+    flex-shrink: 0;
+
+    label {
+        width: 100%;
+        height: 100%;
+        background: #F1F1F1;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 15px;
+
+        svg {
+            width: 26px;
+            height: 23px;
+        }
+
+        img[src^="data"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        left: 50%;
+        top: 100%;
+        width: 1px;
+        height: 1px;
+    }
+
+    .b2 {
+        &-inner {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &-delete {
+            // position: absolute;
+            // top: 100%;
+            // left: 0;
+            display: none;
+            align-items: center;
+            column-gap: 10px;
+            margin-top: 15px;
+            color: #64845F;
+            font-size: 13px;
+            cursor: pointer;
+
+            &.active {
+                display: flex;
+            }
+
+            img {
+                width: 19px;
+                height: 19px;
+            }
+
+            span {
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+            }
+        }
+
+
+        &-text {
+            color: #64845F;
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        &-img {
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 5;
+            }
+        }
+    }
+
+    @media (max-width: 1025px) {
+        max-width: 335px;
+        width: 100%;
+        height: auto;
+
+        .b2 {
+            &-inner {
+                height: 259px;
+            }
+        }
+    }
+}
